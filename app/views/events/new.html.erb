@@ -1,0 +1,5 @@
+<%= form_for :event, url: '/events/create' do |f| %>
+  <%= f.text_area :description %>
+  <%= f.text_field :date %>
+  <%= f.submit "Post" %>
+<% end %>

@@ -1,0 +1,8 @@
+<p><%= link_to "Create event", events_new_path %></p>
+
+<% @events.each do |event| %>
+  <td><%= link_to "#{event.date}", events_show_path(event) %></td>
+  <tr>
+    <td><%= event.description %></td>
+  </tr>
+<% end %>
