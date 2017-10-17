@@ -1,7 +1,11 @@
 <p><%= link_to "Create event", events_new_path %></p>
 
+<%= @user.attended_events.each do |event| %>
+  <%= event %>
+<% end %><br><br>
+
 <% @events.each do |event| %>
-  <td><%= link_to "#{event.date}", events_show_path(event) %></td>
+  <td><%= link_to "show", events_show_path(event) %></td>
   <tr>
     <td><%= event.description %></td>
   </tr>
