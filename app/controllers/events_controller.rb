@@ -4,8 +4,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.creator_id = session[:user_id]
+    user = User.find(session[:user_id])
+    @event = user.created_events.create(event_params)
     if @event.save!
       redirect_to '/users/show'
     end
