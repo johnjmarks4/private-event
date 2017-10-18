@@ -4,7 +4,15 @@
   <%= event %>
 <% end %><br><br>
 
-<% @events.each do |event| %>
+<% @upcoming_events.each do |event| %>
+  <td><%= link_to "show", events_show_path(event) %></td>
+  <tr>
+    <td><%= event.description %></td>
+  </tr>
+<% end %><br><br>
+
+<p>Previously attended events</p>
+<% @previous_events.each do |event| %>
   <td><%= link_to "show", events_show_path(event) %></td>
   <tr>
     <td><%= event.description %></td>

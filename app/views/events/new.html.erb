@@ -1,4 +1,6 @@
 <%= form_for :event, url: '/events/create' do |f| %>
-  <%= f.text_area :description %>
+  Description: <%= f.text_area :description %><br>
+  Month: <%= f.text_field :month %><br>
+  Day: <%= f.text_field :day %><br>
   <%= f.submit "Post" %>
 <% end %>
