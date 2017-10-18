@@ -19,5 +19,7 @@ Rails.application.routes.draw do
 
   post 'events/show' => 'events#show'
 
+  get 'events/index' => 'events#index'
+
   root 'users#new'
 end

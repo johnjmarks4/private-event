@@ -11,6 +11,19 @@ class EventsController < ApplicationController
     end
   end
 
+  def index
+    if params[:past] == true
+      @past_events = Event.past.all
+    else
+      @past_events = Event.all
+    end
+    if params[:future] == true
+      @future_events = Event.future.all
+    else
+      @future_events = Event.all
+    end
+  end
+
   def show
     @event = Event.find(params[:format])
   end

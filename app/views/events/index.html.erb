@@ -1,4 +1,6 @@
-<%= @past_events.each do |event| %>
-  <%= event.description %>
-  <%= "#{event.month}/#{event.day}" %>
-<% end %><br>
+<%= [@past_events, @future_events].each do |time| %>
+  <%= time.each do |event| %>
+    <%= event.description %>
+    <%= "#{event.month}/#{event.day}" %>
+  <% end %><br>
+<% end %>
